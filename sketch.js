@@ -1,15 +1,22 @@
+
 let number = 30;
 let rectSpacing = 10;
 const numberOfyellow = 8;
 const colors = ['#d2d1c1', '#4468bc', '#a4362a'];
 const colors2 = ['#e9d22b', '#4468bc', '#a4362a'];
 
+let numberOfBlue = 30;
+let numberOfRed = 70;
+let numberOfGrey = 70;
+const numberOfyellow = 50;
+
+
 let rectangles = [];
 let rectanglesBig = [];
 //arrays using to store multipe classes of rectangles
-
 function setup() {
    resizeCanvas(windowWidth, windowHeight);
+
     background('#f2f3ee');
  
 let y1 = random(0,150);
@@ -171,6 +178,57 @@ let randomRectangle = new Rectangle(i * (50 + rectSpacing), 250+y1*2+y1*2, 15, 1
 function draw() {
   // Traverse the array and draw each rectangle
  
+
+
+  // create groups of rectangles
+  for(let i = 0; i< numberOfRed; i++){
+  let redRectangle = new Rectangle(random(20,100), 20, 20, 20, 'red');
+  rectangles.push(redRectangle);
+  }
+  rectangles.push(new Rectangle(200, 100, 20, 20, 'blue'));
+  rectangles.push(new Rectangle(100, 50, 20,20, 'grey'));
+  rectangles.push(new Rectangle(100, 250, 150,20, 'yellow'));
+  noStroke();
+
+
+   for (let i = 0; i < 15; i++) {
+  //Randomly generate the position, size, and color of block a
+     
+     
+     
+    let x = random(width);
+    let y = random(height);
+    let widthA = random(30, 50);
+    let heightA = random(30, 50);
+  
+
+    // Randomly generate the size of blocks b and c
+    let widthB = widthA - random(10, 20);
+    let heightB = heightA - random(10,20);
+    let widthC = widthA + random(10, 20);
+    let heightC = heightA + random (10,20);
+
+    //Randomly generate colors
+  
+    let colorA = random(colors2);
+    let colorB = random(colors2);
+    let colorC = random(colors2);
+  
+    // Create a block object and add it to an array
+    
+   
+    rectanglesBig.push(new Rectangle(x, y, widthC, heightC, colorC));
+    rectanglesBig.push(new Rectangle(x, y, widthA, heightA, colorA));
+     rectanglesBig.push(new Rectangle(x, y, widthB, heightB, colorB));
+   
+   
+}}
+
+
+
+function draw() {
+  background(255);
+  // draw rectangle
 
   for (let i = 0; i < rectangles.length; i++) {
     rectangles[i].draw();
