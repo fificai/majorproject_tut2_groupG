@@ -1,26 +1,116 @@
-let numberOfBlue = 30;
-let numberOfRed = 70;
-let numberOfGrey = 70;
-const numberOfyellow = 50;
+let number = 30;
+let rectSpacing = 10;
+const numberOfyellow = 8;
+const colors = ['#f0f0eb', '#4468bc', '#a4362a'];
 
 let rectangles = [];
 //arrays using to store multipe classes of rectangles
+
 function setup() {
-   resizeCanvas(windowWidth, windowHeight);
-  // create groups of rectangles
-  for(let i = 0; i< numberOfRed; i++){
-  let redRectangle = new Rectangle(random(20,100), 20, 20, 20, 'red');
-  rectangles.push(redRectangle);
+   resizeCanvas(500, 500);
+    background('#f2f3ee');
+
+//yellow lines
+for (let i = 0; i < numberOfyellow; i++) {
+let yellowRectangle = new Rectangle(0, i * (100 + rectSpacing), 500, 15, '#e9d22b');
+  rectangles.push(yellowRectangle);
+}
+   
+for (let i = 0; i < 3; i++) {
+let yellowRectangle = new Rectangle(0, i * (80 + rectSpacing), 500, 15, '#e9d22b');
+  rectangles.push(yellowRectangle);
+}
+   
+for (let i = 0; i < 3; i++) {
+let yellowRectangle = new Rectangle( 0,400+(i * (70 + rectSpacing)), 500, 15, '#e9d22b');
+  rectangles.push(yellowRectangle);}
+   
+for (let i = 0; i < 3; i++) {
+let yellowRectangle = new Rectangle( i * (40 + rectSpacing), 0, 15, 500, '#e9d22b');
+  rectangles.push(yellowRectangle);}
+
+for (let i = 0; i < 3; i++) {
+let yellowRectangle = new Rectangle( 400+(i * (20 + rectSpacing)), 0, 15, 500, '#e9d22b');
+  rectangles.push(yellowRectangle);}   
+
+//random squares
+  
+//line 8
+for (let i = 0; i < number; i++) {
+    const randomColor = colors[i % colors.length];
+let randomRectangle = new Rectangle(i * (40 + rectSpacing), 90, 15, 15, randomColor);
+  rectangles.push(randomRectangle);
+}
+//line 13
+  for (let i = 0; i < number; i++) {
+    const randomColor = colors[i % colors.length];
+let randomRectangle = new Rectangle(i * (40 + rectSpacing), 400, 15, 15, randomColor);
+  rectangles.push(randomRectangle);
+}
+//line10
+ for (let i = 0; i < number; i++) {
+    const randomColor = colors[i % colors.length];
+let randomRectangle = new Rectangle(i * (30 + rectSpacing), 180, 15, 15, randomColor);
+  rectangles.push(randomRectangle);
+}
+//line15 
+  for (let i = 0; i < number; i++) {
+    const randomColor = colors[i % colors.length];
+let randomRectangle = new Rectangle(i * (30 + rectSpacing), 480, 15, 15, randomColor);
+  rectangles.push(randomRectangle);
+}
+//line5
+ for (let i = 0; i < number; i++) {
+     const randomColor = colors[i % colors.length];
+ let randomRectangle = new Rectangle(430, i * (35 + rectSpacing), 15, 15, randomColor);
+  rectangles.push(randomRectangle);
+}
+//line6
+  for (let i = 0; i < number; i++) {
+     const randomColor = colors[i % colors.length];
+  let randomRectangle = new Rectangle(460,(i * (100 + rectSpacing)), 15, 15, randomColor);
+     rectangles.push(randomRectangle);
   }
-  rectangles.push(new Rectangle(200, 100, 20, 20, 'blue'));
-  rectangles.push(new Rectangle(100, 50, 20,20, 'grey'));
-  rectangles.push(new Rectangle(100, 250, 150,20, 'yellow'));
+  //2
+  for (let i = 0; i < number; i++) {
+        const randomColor = colors[i % colors.length];
+  let randomRectangle = new Rectangle(50, i * (100 + rectSpacing), 15, 15, randomColor);
+     rectangles.push(randomRectangle);
+  }
+  //3
+  for (let i = 0; i < number; i++) {
+     const randomColor = colors[i % colors.length];
+  let randomRectangle = new Rectangle(100, i * (100 + rectSpacing), 15, 15, randomColor);
+     rectangles.push(randomRectangle);
+  }
+  //4
+       for (let i = 0; i < number; i++) {
+         const randomColor = colors[i % colors.length];
+  let randomRectangle = new Rectangle(400, i * (100 + rectSpacing), 15, 15, randomColor);
+     rectangles.push(randomRectangle);
+  }
+  //11
+  for (let i = 0; i < number; i++) {
+    const randomColor = colors[i % colors.length];
+  let randomRectangle = new Rectangle(i * (50 + rectSpacing), 220, 15, 15, randomColor);
+  rectangles.push(randomRectangle);
+}
+  //12
+ for (let i = 0; i < number; i++) {
+    const randomColor = colors[i % colors.length];
+ let randomRectangle = new Rectangle(i * (30 + rectSpacing), 330, 15, 15, randomColor);
+  rectangles.push(randomRectangle);
+}
+  //7
+  for (let i = 0; i < number; i++) {
+    const randomColor = colors[i % colors.length];
+  let randomRectangle = new Rectangle(i * (30 + rectSpacing), 0, 15, 15, randomColor);
+  rectangles.push(randomRectangle);
+}
   noStroke();
 }
 
-function draw() {
-  background(255);
-  // draw rectangle
+  function draw() {
   for (let i = 0; i < rectangles.length; i++) {
     rectangles[i].draw();
   }
