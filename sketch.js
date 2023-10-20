@@ -5,11 +5,6 @@ const numberOfyellow = 8;
 const colors = ['#d2d1c1', '#4468bc', '#a4362a'];
 const colors2 = ['#e9d22b', '#4468bc', '#a4362a'];
 
-let numberOfBlue = 30;
-let numberOfRed = 70;
-let numberOfGrey = 70;
-const numberOfyellow = 50;
-
 
 let rectangles = [];
 let rectanglesBig = [];
