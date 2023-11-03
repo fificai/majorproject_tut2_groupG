@@ -1,10 +1,10 @@
 
 let number = 30;
 let rectSpacing = 10;
+
 const numberOfaqua = 8;
 const colors = ['#08527d', '#1678A2', '#093169'];
 const colors2 = ['#Bffbfd', '#083360', '#2a91a4'];
-
 
 // Create arrays to store multiple classes of rectangles:
 let rectangles = [];
