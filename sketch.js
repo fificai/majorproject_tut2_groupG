@@ -239,7 +239,7 @@ function windowResized() {
 
 
 function draw() {
-  {
+  
     background('#000a0c');
     // Draw rectangle:
 
@@ -253,7 +253,7 @@ function draw() {
       rectanglesBig[i].draw();
     }
     pop();
-  }
+  
 }
 
 class Rectangle {
